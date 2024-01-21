@@ -58,12 +58,12 @@ task runFrac(type: JavaExec) {
 
   classpath = sourceSets.main.runtimeClasspath
 
-  main = 'Frac'
-  if(project.hasProperty("denom") && project.hasProperty("num")) {
-    args(project.getProperty('denom'), project.getProperty('num'));
+  main = 'Fraction'
+  if(project.hasProperty("num") && project.hasProperty("denom")) {
+    args(project.getProperty('num'), project.getProperty('denom'));
   }
-  else if(project.hasProperty("denom")) {
-    args(project.getProperty('denom'), 1);
+  else if(project.hasProperty("num")) {
+    args(project.getProperty('num'), 1);
   }
 
 }
